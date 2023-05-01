@@ -1,13 +1,14 @@
 import matter from "gray-matter";
 import StandardLayout from "../layouts/StandardLayout";
 import BlogList from "../components/BlogList";
+import { Show } from "@chakra-ui/react";
 
 const Index = (props) => {
     return (
         <StandardLayout>
-            <section>
+            <Show above="sm">
                 <BlogList allBlogs={props.allBlogs} />
-            </section>
+            </Show>
         </StandardLayout>
     );
 };
