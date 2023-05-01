@@ -1,10 +1,9 @@
-import Image from "next/image";
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
 import glob from "glob";
-import Layout from "../../components/Layout";
-import styles from "../../styles/Blog.module.css";
+import StandardLayout from "../../layouts/StandardLayout";
 import { Prose } from "@nikolovlazar/chakra-ui-prose";
+import { Center, Flex, Heading, Image, Text } from "@chakra-ui/react";
 
 function reformatDate(fullDate) {
     const date = new Date(fullDate);
@@ -13,30 +12,33 @@ function reformatDate(fullDate) {
 
 export default function BlogTemplate({ frontmatter, markdownBody, siteTitle }) {
     return (
-        <Layout siteTitle={siteTitle}>
-            <article className={styles.blog}>
-                <figure className={styles.blog__hero}>
-                    <Image
-                        width='1920'
-                        height='1080'
-                        src={frontmatter.hero_image}
-                        alt={`blog_hero_${frontmatter.title}`}
-                    />
-                </figure>
-                <div className={styles.blog__info}>
-                    <h1>{frontmatter.title}</h1>
-                    <h3>{reformatDate(frontmatter.date)}</h3>
-                </div>
-                <div className={styles.blog__body}>
+        <StandardLayout>
+            <Image
+                width='100%'
+                height={"25rem"}
+                src={frontmatter.hero_image}
+                alt={`blog_hero_${frontmatter.title}`}
+            />
+            <article>
+                <Flex
+                    gap={2}
+                    direction={"column"}
+                    textAlign={"center"}
+                    marginTop={4}
+                >
+                    <Heading>{frontmatter.title}</Heading>
+                    <Text fontSize={"sm"}>{frontmatter.author}</Text>
+                    <Text fontSize={"sm"} fontStyle={"italic"}>
+                        {reformatDate(frontmatter.date)}
+                    </Text>
+                </Flex>
+                <div>
                     <Prose>
                         <ReactMarkdown>{markdownBody}</ReactMarkdown>
                     </Prose>
                 </div>
-                <h2 className={styles.blog__footer}>
-                    Written By: {frontmatter.author}
-                </h2>
             </article>
-        </Layout>
+        </StandardLayout>
     );
 }
 
