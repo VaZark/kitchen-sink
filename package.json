@@ -8,10 +8,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.6.0",
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
     "@next/font": "13.0.4",
+    "@nikolovlazar/chakra-ui-prose": "^1.2.1",
+    "framer-motion": "^10.12.4",
+    "glob": "^8.0.3",
     "gray-matter": "^4.0.3",
     "next": "13.0.4",
-    "glob": "^8.0.3",
     "raw-loader": "^4.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
