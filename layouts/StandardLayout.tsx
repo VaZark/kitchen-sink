@@ -103,7 +103,9 @@ export default function StandardLayout({ children }) {
             <Collapse in={isOpen} animateOpacity>
                 <MobileNav />
             </Collapse>
-            <Container maxW='5xl'  paddingY={4}>{children}</Container>
+            <Container maxW='5xl' paddingY={4}>
+                {children}
+            </Container>
         </Box>
     );
 }
@@ -170,13 +172,15 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
             display={"block"}
             p={2}
             rounded={"md"}
-            _hover={{ bg: useColorModeValue("purple.50", "gray.900") }}
+            _hover={{ bg: useColorModeValue("purple.100", "whiteAlpha.100") }}
         >
             <Flex
                 gap={2}
                 direction={"row"}
                 align={"center"}
-                _groupHover={{ color: "purple.700" }}
+                _groupHover={{
+                    color: useColorModeValue("purple.700", "white"),
+                }}
             >
                 <Box flex={1}>
                     <Text transition={"all .3s ease"} fontWeight={"semi-bold"}>
@@ -300,7 +304,7 @@ const NAV_ITEMS: Array<NavItem> = [
         ],
     },
     {
-        label: "About",
+        label: "The Roadmap",
         href: "/info",
     },
 ];

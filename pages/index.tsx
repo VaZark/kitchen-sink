@@ -2,13 +2,15 @@ import matter from "gray-matter";
 import StandardLayout from "../layouts/StandardLayout";
 import BlogList from "../components/BlogList";
 import { Show } from "@chakra-ui/react";
+import GfmRenderer from "../components/GfmRenderer";
 
 const Index = (props) => {
     return (
         <StandardLayout>
-            <Show above="sm">
+            <Show above='sm'>
                 <BlogList allBlogs={props.allBlogs} />
             </Show>
+            <GfmRenderer>{props.info}</GfmRenderer>
         </StandardLayout>
     );
 };
@@ -18,6 +20,8 @@ export default Index;
 export async function getStaticProps() {
     // getting the website config
     const siteConfig = await import(`../data/config.json`);
+    const content = await import(`../data/info.md`);
+    const info = matter(content.default);
 
     const webpackContext = require.context("../posts", true, /\.md$/);
     // the list of file names contained
@@ -53,6 +57,7 @@ export async function getStaticProps() {
 
     return {
         props: {
+            info: info.content,
             allBlogs: posts,
             title: siteConfig.default.title,
             description: siteConfig.default.description,
