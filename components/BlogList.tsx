@@ -26,7 +26,7 @@ const BlogList = ({ allBlogs }) => {
                             _hover={{ flex: 10, w: "100%" }}
                             transition={"all .5s ease-out"}
                             position={"relative"}
-                            bgImage={`url('${post.frontmatter.hero_image}')`}
+                            bgImage={`url('${post.frontmatter.title_image}')`}
                             bgPosition={"center"}
                             rounded={"md"}
                         >

@@ -12,4 +12,4 @@ Welcome to my kitche sink. This blog is my little cookbook with all the recipes 
 > These recipes are specific to my palate, so YMMV.  
 > Modify & adapt these recipes to create YOUR favourite versions.
 
-The only difference between my blog and the billion others might be my more mathematical approach. I'm sure someone has already published similar but that have never stopped any dev before and it shall stop me neither ;)
+The only difference between my blog and the billion others might be my more mathematical approach. I'm sure someone has already published something similar but that have never stopped any dev before and it shan't stop me neither ;)
