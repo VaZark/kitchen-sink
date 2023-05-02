@@ -12,5 +12,6 @@ module.exports = {
     images: {
         unoptimized: true,
     },
-    output: "standalone",
+    output: "export",
+    distDir: 'out',
 };

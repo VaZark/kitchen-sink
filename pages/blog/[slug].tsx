@@ -16,8 +16,8 @@ export default function BlogTemplate({ frontmatter, markdownBody, siteTitle }) {
             <Image
                 width='100%'
                 height={"25rem"}
-                src={frontmatter.hero_image}
-                alt={`blog_hero_${frontmatter.title}`}
+                src={`../${frontmatter.hero_image}`}
+                alt={frontmatter.title}
             />
             <article>
                 <Flex

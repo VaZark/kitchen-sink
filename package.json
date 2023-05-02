@@ -5,23 +5,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "deploy": "next build && touch out/.nojekyll && git add out/ && git commit -m \"Deploy\" && git subtree push --prefix out origin gh-pages"
+    "lint": "next lint"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",
     "@chakra-ui/react": "^2.6.0",
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
-    "@next/font": "13.0.4",
+    "@next/font": "^13.0.4",
     "@nikolovlazar/chakra-ui-prose": "^1.2.1",
     "framer-motion": "^10.12.4",
     "glob": "^8.0.3",
     "gray-matter": "^4.0.3",
-    "next": "13.0.4",
+    "next": "^13.3.0",
     "raw-loader": "^4.0.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-markdown": "^8.0.3",
     "remark-gfm": "^3.0.1"
   },

@@ -1,14 +1,5 @@
-import ReactMarkdown from "react-markdown";
-import {
-    Box,
-    Flex,
-    Image,
-    Link,
-    LinkBox,
-    LinkOverlay,
-    Text,
-} from "@chakra-ui/react";
-import { useState } from "react";
+import { Flex, LinkBox, LinkOverlay } from "@chakra-ui/react";
+import NextLink from "next/link";
 
 function truncateSummary(content) {
     return content.slice(0, 200).trimEnd();
@@ -40,6 +31,7 @@ const BlogList = ({ allBlogs }) => {
                             rounded={"md"}
                         >
                             <LinkOverlay
+                                as={NextLink}
                                 href={`/blog/${post.slug}`}
                                 fontWeight={"bold"}
                                 outline={"purple.800"}
