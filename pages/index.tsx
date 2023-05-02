@@ -19,14 +19,18 @@ export default Index;
 
 export async function getStaticProps() {
     // getting the website config
-    const siteConfig = await import(`../data/config.json`);
-    const content = await import(`../data/info.md`);
+    const content = await import("../data/info.md");
     const info = matter(content.default);
 
-    const webpackContext = require.context("../posts", true, /\.md$/);
+    const webpackContext = require.context(
+        "../posts",
+        true,
+        /\.\/[\-a-zA-Z0-9]+\.md$/
+    );
     // the list of file names contained
     // inside the "posts" directory
     const keys = webpackContext.keys();
+
     const values = keys.map(webpackContext);
 
     // getting the post data from the files contained
@@ -46,7 +50,8 @@ export async function getStaticProps() {
 
         // parsing the YAML metadata and markdown body
         // contained in the .md file
-        const document = matter(value.default);
+        // @ts-ignore
+        const document = matter(value);
 
         return {
             frontmatter: document.data,
@@ -59,8 +64,6 @@ export async function getStaticProps() {
         props: {
             info: info.content,
             allBlogs: posts,
-            title: siteConfig.default.title,
-            description: siteConfig.default.description,
         },
     };
 }

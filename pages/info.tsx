@@ -42,11 +42,8 @@ export default function Info({ markdownBody, title }) {
 }
 
 export async function getStaticProps() {
-    const blogRoadmap = await import(`../data/blog-roadmap.md`);
-    console.log(blogRoadmap);
-
-    const technicalRoadmap = await import(`../data/technical-roadmap.md`);
-    const config = await import(`../data/config.json`);
+    const blogRoadmap = await import("../data/blog-roadmap.md");
+    const technicalRoadmap = await import("../data/technical-roadmap.md");
 
     return {
         props: {
