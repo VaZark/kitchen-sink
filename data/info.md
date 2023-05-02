@@ -1,7 +1,15 @@
 ---
-title: info page
-background_color: '#AEC4BE'
+title: Hellooooo
+background_color: "#AEC4BE"
 ---
-## This blog was created using [NextJS](https://nextjs.org/) 
 
-## To get started, read the NextJS [docs](https://nextjs.org/docs) or checkout the [repository](https://github.com/kendallstrautman/brevifolia-nextjs).
+## Hellooooo
+
+I'm Vaz. Just another dev with too many passions and too little time.
+
+Welcome to my kitche sink. This blog is my little cookbook with all the recipes I've experimenting and tinkered with over the years.
+
+> These recipes are specific to my palate, so YMMV.  
+> Modify & adapt these recipes to create YOUR favourite versions.
+
+The only difference between my blog and the billion others might be my more mathematical approach. I'm sure someone has already published similar but that have never stopped any dev before and it shall stop me neither ;)
